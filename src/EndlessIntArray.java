@@ -49,5 +49,27 @@ public class EndlessIntArray {
         }
         return arr;
     }
+    public int getArrElement(int index){
+        if (index < length && index >= 0){
+            return array[index];
+        }else{
+            throw new IllegalArrayIndexException("There are no element with this index in array.");
+        }
+    }
+    public void toStart(int element){
+        if (array.length <= length){
+            int[] arr2 = new int[(int) (length*1.5)];
+            arr2[0] = element;
+            for (int i = 1; i <= length;i++){
+                arr2[i] = array[i-1];
+            }
+            array = arr2;
+        }else{
+            for (int i = length;i >= 0; i--){
+                array[i] = array[i-1];
+            }
+        }
+        length++;
+    }
 }
 

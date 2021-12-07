@@ -5,12 +5,10 @@ public class Main {
         EndlessIntArray x = new EndlessIntArray();
         x.add(2);
         x.add(3);
+        System.out.println(Arrays.toString(x.toArray()) + " " + x.getLength() + " " + x.getCapacity());
         x.add(4);
-        System.out.println(Arrays.toString(x.toArray()));
-        int y = x.remove(1);
-        System.out.println(y);
-        System.out.println(Arrays.toString(x.toArray()));
-        System.out.println(x.indexOf(2));
-
+        System.out.println(Arrays.toString(x.toArray()) + " " + x.getLength() + " " + x.getCapacity());
+        x.toStart(5);
+        System.out.println(Arrays.toString(x.toArray()) + " " + x.getLength() + " " + x.getCapacity());
     }
 }
